@@ -351,10 +351,11 @@
   </style>
 </head>
 <body>
+  <div id="top"></div>
 
   <!-- NAV -->
   <nav>
-    <a class="nav-logo" href="#">Micaela Pita</a>
+    <a class="nav-logo" href="#top">Micaela Pita</a>
     <div class="nav-links">
       <a class="nav-link" href="#about">About</a>
       <a class="nav-link" href="#services">Services</a>
@@ -508,12 +509,13 @@
     <div class="rule"></div>
 
     <div class="work-tabs">
-      <button class="tab-btn active" onclick="showTab('judicial')">SP›EN Judicial Documents</button>
-      <button class="tab-btn" onclick="showTab('articles')">EN›SP Articles</button>
-      <button class="tab-btn" onclick="showTab('clinical')">EN›SP Clinical Documents</button>
-      <button class="tab-btn" onclick="showTab('personal')">SP›EN Personal Docs</button>
-      <button class="tab-btn" onclick="showTab('legal')">SP›EN Legal Documents</button>
-      <button class="tab-btn" onclick="showTab('video')">SP›EN Video Localization</button>
+      <button class="tab-btn active" onclick="showTab(event,'judicial')">SP›EN Judicial Documents</button>
+      <button class="tab-btn" onclick="showTab(event,'articles')">EN›SP Articles</button>
+      <button class="tab-btn" onclick="showTab(event,'clinical')">EN›SP Clinical Documents</button>
+      <button class="tab-btn" onclick="showTab(event,'personal')">SP›EN Personal Docs</button>
+      <button class="tab-btn" onclick="showTab(event,'legal')">SP›EN Legal Documents</button>
+      <button class="tab-btn" onclick="showTab(event,'video')">SP›EN Video Localization</button>
+
     </div>
 
     <!-- JUDICIAL -->
@@ -663,21 +665,21 @@
               <div class="contact-link-value">micaeladenisepita@gmail.com</div>
             </div>
           </a>
-          <a class="contact-link-item" href="https://wa.me/5491137588035" target="_blank">
+          <a class="contact-link-item" href="https://wa.me/5491137588035" target="_blank" rel="noopener noreferrer">
             <span class="contact-link-icon">💬</span>
             <div class="contact-link-info">
               <div class="contact-link-label">WhatsApp</div>
               <div class="contact-link-value">(+54) 9 11 3758 8035</div>
             </div>
           </a>
-          <a class="contact-link-item" href="https://www.linkedin.com/in/micaela-pita" target="_blank">
+          <a class="contact-link-item" href="https://www.linkedin.com/in/micaela-pita" target="_blank" rel="noopener noreferrer">
             <span class="contact-link-icon">in</span>
             <div class="contact-link-info">
               <div class="contact-link-label">LinkedIn</div>
               <div class="contact-link-value">LinkedIn Profile</div>
             </div>
           </a>
-          <a class="contact-link-item" href="https://www.ctpcba.org.ar" target="_blank">
+          <a class="contact-link-item" href="https://www.ctpcba.org.ar" target="_blank" rel="noopener noreferrer">
             <span class="contact-link-icon">✔</span>
             <div class="contact-link-info">
               <div class="contact-link-label">CTPCBA</div>
@@ -703,8 +705,11 @@
     function showTab(id) {
       document.querySelectorAll('.work-panel').forEach(p => p.classList.remove('active'));
       document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
-      document.getElementById('tab-' + id).classList.add('active');
-      event.target.classList.add('active');
+
+      const panel = document.getElementById('tab-' + id);
+      if (panel) panel.classList.add('active');
+
+      if (e && e.currentTarget) e.currentTarget.classList.add('active');
     }
   </script>
 
