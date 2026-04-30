@@ -64,6 +64,25 @@
       padding: 8rem 6vw 5rem;
       position: relative; overflow: hidden;
     }
+    /* FOTO EN HERO (columna derecha) */
+    .hero-media{
+      position: relative;
+      z-index: 2;
+      flex: 1;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+    }
+
+    .hero-photo{
+      width: min(380px, 100%);
+      aspect-ratio: 3 / 4;
+      object-fit: cover;
+      border-radius: 18px;
+      border: 1px solid rgba(201,168,76,0.25);
+      box-shadow: 0 18px 60px rgba(0,0,0,0.22);
+    }
+``
     .hero-bg-shape {
       position: absolute; top: 0; right: 0;
       width: 42%; height: 100%;
@@ -81,6 +100,13 @@
       font-size: 0.72rem; letter-spacing: 0.22em; text-transform: uppercase;
       color: var(--gold); margin-bottom: 1.6rem; font-weight: 500;
     }
+    <div class="hero-media">
+      <img
+        class="hero-photo"
+        src="micaela-pita.jpg"
+        alt="Foto profesional de Micaela Pita"
+      />
+</div>
     .hero-name {
       font-family: 'Cormorant Garamond', serif;
       font-size: clamp(3.5rem, 6vw, 6.2rem);
