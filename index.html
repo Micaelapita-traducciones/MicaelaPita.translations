@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Micaela Pita — Traductora Pública</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --navy: #0f1f38;
+      --navy-mid: #1a3254;
+      --gold: #b8965a;
+      --gold-light: #d4b483;
+      --cream: #f7f4ef;
+      --text-muted: #5a5a72;
+      --white: #ffffff;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--cream);
+      color: var(--navy);
+      overflow-x: hidden;
+    }
+
+    /* NAV */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      background: rgba(15, 31, 56, 0.97);
+      backdrop-filter: blur(8px);
+      padding: 1.1rem 6vw;
+      display: flex; align-items: center; justify-content: space-between;
+      border-bottom: 1px solid rgba(201,168,76,0.2);
+    }
+    .nav-logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.25rem; font-weight: 600;
+      color: var(--gold); letter-spacing: 0.04em;
+      text-decoration: none;
+    }
+    .nav-links { display: flex; gap: 1rem; }
+    .nav-btn {
+      font-size: 0.75rem; font-weight: 400; letter-spacing: 0.1em;
+      text-transform: uppercase; text-decoration: none;
+      padding: 0.5rem 1.1rem; transition: all 0.2s;
+    }
+    .nav-btn-email {
+      color: rgba(255,255,255,0.7);
+      border: 1px solid rgba(255,255,255,0.15);
+    }
+    .nav-btn-email:hover { border-color: var(--gold); color: var(--gold); }
+    .nav-btn-wa {
+      background: var(--gold); color: var(--navy); font-weight: 500;
+    }
+    .nav-btn-wa:hover { background: var(--gold-light); }
+
+    /* HERO */
+    .hero {
+      min-height: 100vh;
+      background: var(--navy);
+      display: flex; align-items: center;
+      padding: 8rem 6vw 5rem;
+      position: relative; overflow: hidden;
+    }
+    .hero-bg-shape {
+      position: absolute; top: 0; right: 0;
+      width: 42%; height: 100%;
+      background: linear-gradient(160deg, var(--navy-mid) 0%, #091525 100%);
+      clip-path: polygon(12% 0, 100% 0, 100% 100%, 0% 100%);
+    }
+    .hero-glow {
+      position: absolute;
+      width: 600px; height: 600px;
+      background: radial-gradient(circle, rgba(201,168,76,0.06) 0%, transparent 65%);
+      top: 5%; left: -150px; pointer-events: none;
+    }
+    .hero-content { position: relative; z-index: 2; max-width: 680px; }
+    .hero-eyebrow {
+      font-size: 0.72rem; letter-spacing: 0.22em; text-transform: uppercase;
+      color: var(--gold); margin-bottom: 1.6rem; font-weight: 500;
+    }
+    .hero-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(3.5rem, 6vw, 6.2rem);
+      font-weight: 300; line-height: 0.95;
+      color: var(--white); margin-bottom: 1.6rem;
+    }
+    .hero-name em {
+      font-style: italic; color: var(--gold-light); display: block;
+    }
+    .hero-desc {
+      font-size: 1rem; color: rgba(255,255,255,0.55);
+      font-weight: 300; line-height: 1.8; margin-bottom: 1.4rem;
+      max-width: 480px;
+    }
+    .hero-badges {
+      display: flex; gap: 0.6rem; flex-wrap: wrap; margin-bottom: 3rem;
+    }
+    .badge {
+      font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase;
+      border: 1px solid rgba(201,168,76,0.35); color: var(--gold);
+      padding: 0.35rem 0.9rem;
+    }
+    .hero-ctas { display: flex; gap: 1rem; flex-wrap: wrap; }
+    .btn-gold {
+      background: var(--gold); color: var(--navy);
+      padding: 0.9rem 2.2rem;
+      font-family: 'DM Sans', sans-serif; font-size: 0.8rem;
+      font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase;
+      text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem;
+      transition: background 0.2s, transform 0.15s;
+    }
+    .btn-gold:hover { background: var(--gold-light); transform: translateY(-2px); }
+    .btn-ghost {
+      background: transparent; color: rgba(255,255,255,0.7);
+      padding: 0.9rem 2.2rem; border: 1px solid rgba(255,255,255,0.18);
+      font-family: 'DM Sans', sans-serif; font-size: 0.8rem;
+      font-weight: 400; letter-spacing: 0.1em; text-transform: uppercase;
+      text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem;
+      transition: border-color 0.2s, color 0.2s, transform 0.15s;
+    }
+    .btn-ghost:hover { border-color: var(--gold); color: var(--gold); transform: translateY(-2px); }
+    .scroll-hint {
+      position: absolute; bottom: 2.5rem; left: 6vw;
+      display: flex; align-items: center; gap: 0.7rem;
+      color: rgba(255,255,255,0.25); font-size: 0.7rem;
+      letter-spacing: 0.15em; text-transform: uppercase;
+      animation: bounce 2.5s ease-in-out infinite;
+    }
+    .scroll-hint::before {
+      content: ''; display: block; width: 1px; height: 36px;
+      background: linear-gradient(to bottom, transparent, rgba(201,168,76,0.45));
+    }
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(6px); }
+    }
+
+    /* PORTFOLIO */
+    #portfolio { padding: 5rem 6vw 6rem; background: var(--cream); }
+    .portfolio-header { margin-bottom: 2.5rem; }
+    .section-label {
+      font-size: 0.72rem; letter-spacing: 0.2em; text-transform: uppercase;
+      color: var(--gold); font-weight: 500; margin-bottom: 0.7rem;
+    }
+    .section-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2rem, 3vw, 2.8rem);
+      font-weight: 400; color: var(--navy); line-height: 1.15; margin-bottom: 0.8rem;
+    }
+    .section-sub {
+      font-size: 0.92rem; color: var(--text-muted); max-width: 500px; line-height: 1.7;
+    }
+    .pdf-shell {
+      border: 1px solid rgba(15,31,56,0.12);
+      background: var(--white);
+      overflow: hidden;
+      box-shadow: 0 8px 40px rgba(15,31,56,0.07);
+    }
+    .pdf-toolbar {
+      background: var(--navy);
+      padding: 0.9rem 1.4rem;
+      display: flex; align-items: center; justify-content: space-between;
+      flex-wrap: wrap; gap: 0.6rem;
+    }
+    .pdf-filename {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1rem; color: rgba(255,255,255,0.7); font-style: italic;
+    }
+    .pdf-actions { display: flex; gap: 0.6rem; }
+    .pdf-action-btn {
+      font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase;
+      color: var(--gold); text-decoration: none;
+      border: 1px solid rgba(201,168,76,0.35);
+      padding: 0.35rem 0.9rem;
+      transition: background 0.2s, color 0.2s;
+    }
+    .pdf-action-btn:hover { background: var(--gold); color: var(--navy); }
+    .pdf-embed {
+      width: 100%; height: 820px; border: none; display: block;
+    }
+    .pdf-fallback {
+      display: none; text-align: center;
+      padding: 4rem 2rem; color: var(--text-muted);
+    }
+    .pdf-fallback p { margin-bottom: 1.5rem; font-size: 0.95rem; line-height: 1.7; }
+
+    /* CONTACT BAR */
+    .contact-bar {
+      background: var(--navy);
+      padding: 3.5rem 6vw;
+      display: flex; align-items: center; justify-content: space-between;
+      flex-wrap: wrap; gap: 2rem;
+    }
+    .contact-bar-label {
+      font-size: 0.72rem; letter-spacing: 0.2em; text-transform: uppercase;
+      color: var(--gold); margin-bottom: 0.5rem;
+    }
+    .contact-bar-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.6rem, 2.5vw, 2.2rem);
+      font-weight: 300; color: var(--white); line-height: 1.2;
+    }
+    .contact-bar-title em { font-style: italic; color: var(--gold-light); }
+    .contact-btns { display: flex; gap: 1rem; flex-wrap: wrap; }
+
+    /* FOOTER */
+    footer {
+      background: #091525;
+      padding: 1.6rem 6vw;
+      display: flex; align-items: center; justify-content: space-between;
+      flex-wrap: wrap; gap: 0.8rem;
+    }
+    .footer-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 0.95rem; color: rgba(255,255,255,0.3); font-style: italic;
+    }
+    .footer-copy { font-size: 0.72rem; color: rgba(255,255,255,0.2); }
+
+    @media (max-width: 640px) {
+      .nav-links { gap: 0.5rem; }
+      .nav-btn { padding: 0.4rem 0.75rem; font-size: 0.68rem; }
+      .hero-bg-shape { display: none; }
+      .pdf-embed { height: 500px; }
+      .contact-bar { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a class="nav-logo" href="#">Micaela Pita</a>
+    <div class="nav-links">
+      <a class="nav-btn nav-btn-email" href="mailto:micaeladenisepita@gmail.com">✉ Email</a>
+      <a class="nav-btn nav-btn-wa" href="https://wa.me/5491137588035" target="_blank">WhatsApp</a>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <div class="hero-bg-shape"></div>
+    <div class="hero-glow"></div>
+    <div class="hero-content">
+      <p class="hero-eyebrow">Traductora Pública — UBA</p>
+      <h1 class="hero-name">
+        Micaela
+        <em>Pita</em>
+      </h1>
+      <p class="hero-desc">
+        Traductora pública egresada de la Universidad de Buenos Aires, especializada en traducciones de alto rigor técnico y terminológico.
+      </p>
+      <div class="hero-badges">
+        <span class="badge">Médica</span>
+        <span class="badge">Farmacéutica</span>
+        <span class="badge">Jurídica</span>
+      </div>
+      <div class="hero-ctas">
+        <a class="btn-gold" href="#portfolio">Ver Portfolio</a>
+        <a class="btn-ghost" href="https://wa.me/5491137588035" target="_blank">💬 Contactar</a>
+      </div>
+    </div>
+    <div class="scroll-hint">Portfolio</div>
+  </section>
+
+  <section id="portfolio">
+    <div class="portfolio-header">
+      <p class="section-label">Trabajos &amp; Experiencia</p>
+      <h2 class="section-title">Portfolio profesional</h2>
+      <p class="section-sub">Selección de trabajos, especializaciones y trayectoria profesional.</p>
+    </div>
+
+    <div class="pdf-shell">
+      <div class="pdf-toolbar">
+        <span class="pdf-filename">Portfolio Micaela Pita.pdf</span>
+        <div class="pdf-actions">
+          <a class="pdf-action-btn" href="Portfolio Micaela Pita.pdf" target="_blank">Abrir</a>
+          <a class="pdf-action-btn" href="Portfolio Micaela Pita.pdf" download>Descargar</a>
+        </div>
+      </div>
+      <embed
+        id="pdfEmbed"
+        class="pdf-embed"
+        src="Portfolio Micaela Pita.pdf"
+        type="application/pdf"
+      />
+      <div class="pdf-fallback" id="pdfFallback">
+        <p>Tu navegador no puede mostrar el PDF directamente.<br>Podés abrirlo o descargarlo con los botones de arriba.</p>
+        <a class="btn-gold" href="Portfolio Micaela Pita.pdf" target="_blank">Abrir PDF</a>
+      </div>
+    </div>
+  </section>
+
+  <div class="contact-bar">
+    <div>
+      <p class="contact-bar-label">¿Tenés un proyecto?</p>
+      <h3 class="contact-bar-title">Hablemos sobre <em>tu traducción</em></h3>
+    </div>
+    <div class="contact-btns">
+      <a class="btn-ghost" href="mailto:micaeladenisepita@gmail.com">✉ micaeladenisepita@gmail.com</a>
+      <a class="btn-gold" href="https://wa.me/5491137588035" target="_blank">💬 WhatsApp</a>
+    </div>
+  </div>
+
+  <footer>
+    <span class="footer-name">Micaela Pita — Traductora Pública</span>
+    <span class="footer-copy">© 2026</span>
+  </footer>
+
+  <script>
+    const embed = document.getElementById('pdfEmbed');
+    const fallback = document.getElementById('pdfFallback');
+    embed.addEventListener('error', () => {
+      embed.style.display = 'none';
+      fallback.style.display = 'block';
+    });
+  </script>
+
+</body>
+</html>
