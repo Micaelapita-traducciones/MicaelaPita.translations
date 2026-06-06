@@ -515,72 +515,59 @@
       <button class="tab-btn" onclick="showTab('articles', this)">EN›SP Articles</button>
       <button class="tab-btn" onclick="showTab('clinical', this)">EN›SP Clinical Documents</button>
       
-      <button class="tab-btn" onclick="showTab('legal', this)">SP›EN Legal Documents</button>
-      <button class="tab-btn" onclick="showTab('video', this)">SP›EN Video Localization</button>
+      <button class="tab-btn" onclick="showTab('legal', this)">SP›EN Contracts</button>
+      <button class="tab-btn" onclick="showTab('video', this)">SP›EN Subtitling</button>
     </div>
 
-  <style>
-    .doc-grid {
+    <style>
+    .doc-compare {
       display: flex;
-      gap: 1rem;
+      gap: 1.2rem;
       flex-wrap: wrap;
     }
-  
-    .doc-card {
-      flex: 1 1 320px;
-      min-width: 280px;
+    
+    .doc-image {
+      flex: 1;
+      min-width: 260px;
     }
-  
-    .doc-card a {
-      display: block;
-      text-decoration: none;
-    }
-  
-    .doc-card img {
+    
+    .doc-image img {
       width: 100%;
-      height: 420px;
+      height: 350px;
       object-fit: contain;
-      background: #f5f5f5;
-      border-radius: 16px;
       display: block;
-      cursor: zoom-in;
-      box-shadow: 0 8px 24px rgba(0,0,0,0.08);
-      transition: transform 0.25s ease, box-shadow 0.25s ease;
+      border-radius: 16px;
+      background: #f5f5f5;
     }
-  
-    .doc-card img:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 12px 28px rgba(0,0,0,0.12);
-    }
-  
+    
     .caption {
       text-align: center;
-      margin-top: 0.6rem;
-      color: #666;
       font-size: 0.9rem;
+      color: #666;
+      margin-top: 0.5rem;
     }
-  </style>
+    </style>
   
-  <!-- PERSONAL DOCS -->
-  <div class="work-panel" id="tab-personal">
-    <div class="work-item">
-  
-      <div class="doc-grid">
-        <div class="doc-card">
-          <a href="sworn-translation-macarena.png" target="_blank" rel="noopener noreferrer">
-            <img src="sworn-translation-macarena.png" alt="Certificate of birth">
-          </a>
-          <p class="caption">Certificate of birth</p>
-        </div>
-  
-        <div class="doc-card">
-          <a href="traduccion-macarena.jpg" target="_blank" rel="noopener noreferrer">
-            <img src="traduccion-macarena.jpg" alt="Sworn translation">
-          </a>
-          <p class="caption">Sworn translation</p>
+    <!-- PERSONAL DOCS -->
+    <div class="work-panel" id="tab-personal">
+      <div class="work-item">
+    
+        <div class="doc-grid">
+          <div class="doc-card">
+            <a href="sworn-translation-macarena.png" target="_blank" rel="noopener noreferrer">
+              <img src="sworn-translation-macarena.png" alt="Certificate of birth">
+            </a>
+            <p class="caption">Certificate of birth</p>
+          </div>
+    
+          <div class="doc-card">
+            <a href="traduccion-macarena.jpg" target="_blank" rel="noopener noreferrer">
+              <img src="traduccion-macarena.jpg" alt="Sworn translation">
+            </a>
+            <p class="caption">Sworn translation</p>
+          </div>
         </div>
       </div>
-    </div>
 
     <!-- JUDICIAL -->
     <div class="work-panel active" id="tab-judicial">
