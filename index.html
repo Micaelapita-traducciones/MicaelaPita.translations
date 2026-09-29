@@ -48,7 +48,8 @@
     .nav-link {
       font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase;
       text-decoration: none; padding: 0.45rem 1rem; transition: all 0.2s;
-      color: rgba(255,255,255,0.75); border: 1px solid rgba(255,255,255,0.12);
+      color: rgba(255,255,255,0.75); 
+      border: 1px solid rgba(255,255,255,0.12);
     }
     .nav-link:hover { border-color: var(--gold); color: var(--gold); }
     
@@ -67,28 +68,25 @@
     .hero-shape {
       position: absolute; top: 0; right: 0;
       width: 44%; height: 100%;
-      background: linear gradient (var(--white) 100%);
+      background: (var(--white);
       clip-path: polygon(10% 0, 100% 0, 100% 100%, 0% 100%);
     }
-    .hero-glow {
-      position: absolute; top:0; right: 0;
-      width: 44%; height: 100%;
-      background: linear-gradient(155deg, var(--navy) 0%, var(--cream) 100%);
-      clip-path: polygon(10% 0, 100% 0, 100% 100%, 0% 100%);
-    }
+    .hero-glow {display none}
+    
     .hero-inner {
       position: relative; z-index: 2;
       display: flex; align-items: center; justify-content: space-between;
       width: 100%; gap: 4rem;
+     }
+    .hero-content {
+    padding: 60px 20px;
     }
     .hero-content h1,
     .hero-content p {
     color:var(--navy-dark);
     }
-    hero-content {
-    padding: 60px 20px;
-    }
     .hero-photo-wrap { flex-shrink: 0; position: relative; }
+      
     .hero-photo {
       width: 280px; height: 340px;
       object-fit: cover; object-position: top center;
