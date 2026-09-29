@@ -31,7 +31,7 @@
     /* ── NAV ── */
     nav {
       position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-      background: var(--navy);
+      background: var(--navy-mid);
       backdrop-filter: blur(10px);
       padding: 1rem 6vw;
       display: flex; align-items: center; justify-content: space-between;
@@ -40,22 +40,22 @@
     .nav-logo {
       font-family: 'Cormorant Garamond', serif;
       font-size: 1.2rem; font-weight: 600; letter-spacing: 0.05em;
-      background:transparent;
-      color: var(--navy dark); text-decoration: none;
+      color: var(--navy-dark); 
+      text-decoration: none;
     }
     .nav-links { display: flex; gap: 0.6rem; align-items: center; }
+    
     .nav-link {
       font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase;
       text-decoration: none; padding: 0.45rem 1rem; transition: all 0.2s;
-      color: rgba(255,255,255,0.65); border: 1px solid rgba(255,255,255,0.12);
+      color: rgba(255,255,255,0.75); border: 1px solid rgba(255,255,255,0.12);
     }
     .nav-link:hover { border-color: var(--gold); color: var(--gold); }
-    .nav-link-wa {
+    
+    .nav-link-wa:{
       background: var(--gold); color: var(--navy);
       font-weight: 500; border-color: var(--gold);
-    }
-    .nav-link-wa:hover { background: var(--gold-light); color: var(--navy); border-color: var(--gold-light); }
-
+  
     /* ── HERO ── */
     .hero {
       min-height: 100vh;
@@ -67,7 +67,7 @@
     .hero-shape {
       position: absolute; top: 0; right: 0;
       width: 44%; height: 100%;
-      background: var(--white) 100%);
+      background: linear gradient (var(--white) 100%);
       clip-path: polygon(10% 0, 100% 0, 100% 100%, 0% 100%);
     }
     .hero-glow {
@@ -81,9 +81,12 @@
       display: flex; align-items: center; justify-content: space-between;
       width: 100%; gap: 4rem;
     }
-    .hero-content h1
+    .hero-content h1,
     .hero-content p {
-    color:var(--navy-dark);  {  padding: 60px 20px;
+    color:var(--navy-dark);
+    }
+    hero-content {
+    padding: 60px 20px;
     }
     .hero-photo-wrap { flex-shrink: 0; position: relative; }
     .hero-photo {
