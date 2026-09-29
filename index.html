@@ -129,14 +129,16 @@
     }
     .btn-gold:hover { background: var(--gold-light); transform: translateY(-2px); }
     .btn-ghost {
-      background: transparent; color: var(--navy) border color: rgba(47,59,85,0.3);
+      background: transparent; color: var(--navy);
       padding: 0.9rem 2.2rem; border: 1px solid rgba(255,255,255,0.18);
       font-family: 'DM Sans', sans-serif; font-size: 0.8rem;
       font-weight: 400; letter-spacing: 0.1em; text-transform: uppercase;
       text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem;
       transition: border-color 0.2s, color 0.2s, transform 0.15s;
     }
-    .btn-ghost:hover { border-color: var(--gold); color: var(--gold); transform: translateY(-2px); }
+    .btn-ghost:hover { border-color: var(--gold); color: var(--gold-dark); transform: translateY(-2px); }
+    #contact .btn-ghost { color: var(--white); border-color: rgba(184,150,90,0.4); }
+    
     .scroll-hint {
       position: absolute; bottom: 2.5rem; left: 6vw;
       display: flex; align-items: center; gap: 0.7rem;
@@ -379,7 +381,6 @@
   
   <!-- Testimonials -->
    <section id="testimonials">
-    testimonials { padding: 4rem 6vw; background: var(--white); }
      
     <script async src="https://testimonial.to/js/widget-embed.js"></script>
   
