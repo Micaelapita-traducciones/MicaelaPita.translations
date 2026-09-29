@@ -31,7 +31,7 @@
     /* ── NAV ── */
     nav {
       position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-      background: var(--navy-mid);
+      background: var(--navy);
       backdrop-filter: blur(10px);
       padding: 1rem 6vw;
       display: flex; align-items: center; justify-content: space-between;
@@ -40,7 +40,8 @@
     .nav-logo {
       font-family: 'Cormorant Garamond', serif;
       font-size: 1.2rem; font-weight: 600; letter-spacing: 0.05em;
-      color: var(--gold); text-decoration: none;
+      background:transparent;
+      color: var(--navy dark); text-decoration: none;
     }
     .nav-links { display: flex; gap: 0.6rem; align-items: center; }
     .nav-link {
@@ -58,7 +59,7 @@
     /* ── HERO ── */
     .hero {
       min-height: 100vh;
-      background: linear-gradient(90deg, var(--navy) 0%,  var(--navy-mid) 25%, var(--cream) 100%);
+      background: var(--cream);
       display: flex; align-items: center;
       padding: 8rem 6vw 5rem;
       position: relative; overflow: hidden;
@@ -66,7 +67,7 @@
     .hero-shape {
       position: absolute; top: 0; right: 0;
       width: 44%; height: 100%;
-      background: var(--cream) 100%);
+      background: var(--white) 100%);
       clip-path: polygon(10% 0, 100% 0, 100% 100%, 0% 100%);
     }
     .hero-glow {
@@ -80,7 +81,9 @@
       display: flex; align-items: center; justify-content: space-between;
       width: 100%; gap: 4rem;
     }
-    .hero-content {  padding: 60px 20px;
+    .hero-content h1
+    .hero-content p {
+    color:var(--navy-dark);  {  padding: 60px 20px;
     }
     .hero-photo-wrap { flex-shrink: 0; position: relative; }
     .hero-photo {
