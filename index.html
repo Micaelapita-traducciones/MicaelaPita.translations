@@ -159,59 +159,26 @@
       font-size: 0.95rem; color: var(--muted); line-height: 1.75; max-width: 560px;
     }
     .rule { width: 48px; height: 2px; background: var(--gold); margin: 1.4rem 0 2.8rem; }
-
-    <!-- Testimonial.to -->
-    <!-- Formulario de Testimonial.to (Sin límite de envío) -->
-
-  <section style="max-width: 800px; width: 100%; margin: 40px auto; padding: 20px; border: 1px solid #e5e7eb; border-radius: 8px;">
-  <h3 style="text-align: center; font-family: sans-serif;"> </h3>
-  <script async type="text/javascript" src="https://testimonial.to/js/widget-embed.js"></script>
-  <div class="testimonial-to-embed" data-url="https://embed-v2.testimonial.to/c/github2?id=90e80ec5-7a65-4b5c-a864-05d3fd3c7758" data-resize="true" data-allow="camera;microphone"></div>
-  </section>
   
-  <!-- Testimonial.to Carrousel-->
-
-    <script async type="text/javascript" src="https://testimonial.to/js/widget-embed.js"></script>
-  <div class="testimonial-to-embed" data-url="https://embed-v2.testimonial.to/carousel/all/github2?id=bcd5ba71-34ad-43dd-9e5b-3e0086d59449" data-resize="true"></div>
-
-    /* ── ABOUT ── */
-    #about {
-      background: var(--white);
-      padding: 6rem 6vw;
-    }
-    .about-grid {
-      display: grid; grid-template-columns: 1fr 1.4fr; gap: 5rem; align-items: start;
-    }
-    .about-left {}
-    .about-contact { margin-top: 2rem; display: flex; flex-direction: column; gap: 1rem; }
-    .contact-item {
-      display: flex; align-items: center; gap: 0.8rem;
-      font-size: 0.88rem; color: var(--muted); text-decoration: none;
-      transition: color 0.2s;
-    }
-    .contact-item:hover { color: var(--gold); }
-    .contact-icon {
-      width: 32px; height: 32px; border: 1px solid var(--cream-dark);
-      display: flex; align-items: center; justify-content: center;
-      font-size: 0.9rem; flex-shrink: 0; background: var(--cream);
-    }
-    .about-sig {
-      margin-top: 2rem; padding: 1rem 1.2rem;
-      border: 1px solid var(--gold-pale); background: var(--cream);
-      font-size: 0.8rem; color: var(--muted); line-height: 1.6;
-    }
-    .about-sig strong { color: var(--navy); display: block; margin-bottom: 0.2rem; }
-    .about-text p {
-      font-size: 1rem; line-height: 1.85; color: var(--muted); margin-bottom: 1.3rem;
-    }
-    .about-creds {
-      display: flex; gap: 1.5rem; flex-wrap: wrap; margin-top: 2rem;
-    }
-    .cred-badge {
-      padding: 0.6rem 1.2rem; border: 1px solid var(--cream-dark);
-      font-size: 0.75rem; font-weight: 500; letter-spacing: 0.06em;
-      text-transform: uppercase; color: var(--navy); background: var(--cream);
-    }
+    <!-- Testimonials -->
+    <section id="testimonials" style="max-width: 900px; margin: 60px auto; padding: 20px;">
+      <h2 style="text-align:center; color: var(--navy); margin-bottom: 20px;">
+        Lo que dicen mis clientes
+      </h2>
+    
+      <script async src="https://testimonial.to/js/widget-embed.js"></script>
+    
+      <div class="testimonial-to-embed"
+           data-url="https://embed-v2.testimonial.to/c/github2?id=90e80ec5-7a65-4b5c-a864-05d3fd3c7758"
+           data-resize="true"
+           data-allow="camera;microphone">
+      </div>
+    
+      <div class="testimonial-to-embed"
+           data-url="https://embed-v2.testimonial.to/carousel/all/github2?id=bcd5ba71-34ad-43dd-9e5b-3e0086d59449"
+           data-resize="true">
+      </div>
+    </section>
 
     /* ── SERVICES ── */
     #services {
@@ -416,27 +383,34 @@
   <!-- ABOUT -->
   <section id="about">
     <div class="about-grid">
+  
+      <!-- LEFT SIDE -->
       <div class="about-left">
         <p class="section-label">About the Translator</p>
         <h2 class="section-title">Micaela Pita</h2>
         <div class="rule"></div>
-
+  
         <div class="about-creds">
           <span class="cred-badge">University of Buenos Aires</span>
           <span class="cred-badge">CTPCBA Sworn Translator License N° 9972</span>
         </div>
       </div>
+  
+      <!-- RIGHT SIDE -->
       <div class="about-text">
         <p>
           I am a dedicated Sworn Translator specializing in both Life Sciences and legal translation. With over four years of experience in the medical field, I have honed my ability to deliver accurate and reliable translations from English to Spanish and vice versa.
         </p>
+  
         <p>
-          Over the past years, I have specialized in artificial intelligence, linguistic validation and medical translation — fields that demand not only linguistic precision but deep subject-matter expertise.
+          Over the past years, I have specialized in artificial intelligence, linguistic validation and medical translation — fields that demand not only linguistic precision but deep subject‑matter expertise.
         </p>
+  
         <p>
           I graduated from the Universidad de Buenos Aires (UBA) in 2024 and hold a Sworn Translator license at the CTPCBA (Colegio de Traductores Públicos de la Ciudad de Buenos Aires).
         </p>
       </div>
+  
     </div>
   </section>
 
