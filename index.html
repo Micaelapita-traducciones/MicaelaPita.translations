@@ -8,7 +8,7 @@
   <style>
     :root {
       --navy: #2f3b55;
-      --navy-mid: #3c4a67;
+      --navy-mid: #a3b6d6;
       --navy-dark: #1e2738;
       --gold: #b8965a;
       --gold-light: #d4b483;
@@ -182,9 +182,10 @@
       padding: 4rem 6vw;
     }
     .services-grid {
-      display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.2rem;
+      display: flex; flex-wrap: wrap; justify-content: center; gap: 1.2
     }
     .service-card {
+      flex: 0 1 calc(25% -rem); min-width: 220px;
       background: var(--white); padding: 1.8rem 1.6rem;
       border-top: 3px solid var(--gold);
       transition: transform 0.2s, box-shadow 0.2s;
